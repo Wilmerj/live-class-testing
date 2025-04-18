@@ -1,0 +1,15 @@
+/* Importaciones de todos los archivos CSS */
+@import './base/reset.css';
+@import './base/typography.css';
+@import './base/variables.css';
+@import './components/button.css';
+@import './components/card.css';
+@import './components/search.css';
+@import './components/pagination.css';
+@import './components/loading.css';
+@import './components/error.css';
+@import './layouts/header.css';
+@import './layouts/footer.css';
+@import './layouts/grid.css';
+@import './pages/character-list.css';
+@import './pages/character-detail.css'; 

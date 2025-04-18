@@ -1,0 +1,142 @@
+.character-list {
+  padding: var(--spacing-lg) 0;
+}
+
+.character-list__header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.character-list__title {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.character-list__subtitle {
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+.character-list__search-container {
+  margin-bottom: var(--spacing-xl);
+}
+
+.character-list__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xxl) 0;
+  text-align: center;
+}
+
+.character-list__empty-icon {
+  font-size: 48px;
+  color: var(--color-text-disabled);
+  margin-bottom: var(--spacing-md);
+}
+
+.character-list__empty-text {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.character-list__empty-suggestion {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.character-list__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.character-list__filter {
+  display: flex;
+  align-items: center;
+}
+
+.character-list__filter-label {
+  margin-right: var(--spacing-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.character-list__filter-select {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-surface);
+}
+
+.character-list__results-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.character-list__count {
+  font-weight: 500;
+}
+
+.character-list__sort {
+  display: flex;
+  align-items: center;
+}
+
+.character-list__sort-label {
+  margin-right: var(--spacing-sm);
+}
+
+.character-list__grid {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .character-list__filters {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .character-list__results-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Animation for cards when they appear */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.character-list__grid .card {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Staggered animation for multiple cards */
+.character-list__grid .card:nth-child(1) { animation-delay: 0.05s; }
+.character-list__grid .card:nth-child(2) { animation-delay: 0.1s; }
+.character-list__grid .card:nth-child(3) { animation-delay: 0.15s; }
+.character-list__grid .card:nth-child(4) { animation-delay: 0.2s; }
+.character-list__grid .card:nth-child(5) { animation-delay: 0.25s; }
+.character-list__grid .card:nth-child(6) { animation-delay: 0.3s; }
+.character-list__grid .card:nth-child(7) { animation-delay: 0.35s; }
+.character-list__grid .card:nth-child(8) { animation-delay: 0.4s; }
+.character-list__grid .card:nth-child(9) { animation-delay: 0.45s; }
+.character-list__grid .card:nth-child(10) { animation-delay: 0.5s; }
+.character-list__grid .card:nth-child(11) { animation-delay: 0.55s; }
+.character-list__grid .card:nth-child(12) { animation-delay: 0.6s; } 
