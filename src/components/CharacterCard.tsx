@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Character } from '../types';
 
-function CharacterCard({ character }) {
-  const getTagClass = (affiliation) => {
-    if (affiliation === 'Hero') return 'card__tag--hero';
-    if (affiliation === 'Villain') return 'card__tag--villain';
+interface CharacterCardProps {
+  character: Character;
+}
+
+function CharacterCard({ character }: CharacterCardProps): JSX.Element {
+  const getTagClass = (role?: string): string => {
+    if (role === 'Hero' || role === 'Z Fighter') return 'card__tag--hero';
+    if (role === 'Villain') return 'card__tag--villain';
     return 'card__tag--neutral';
   };
 
   return (
-    <Link 
-      to={`/character/${character.id}`}
-      className="card"
-      data-testid="character-card"
-    >
+    <div className="card" data-testid="character-card">
       <div className="card__image-container">
         <img 
           src={character.image} 
@@ -36,29 +36,18 @@ function CharacterCard({ character }) {
         </div>
         
         <div className="card__footer">
-          <span className={`card__tag ${getTagClass(character.affiliation)}`}>
-            {character.affiliation}
+          <span className={`card__tag ${getTagClass(character.role)}`}>
+            {character.role || 'Z Fighter'}
           </span>
           
-          <span className="card__link">
+          <Link to={`/character/${character.id}`} className="card__link">
             Ver detalles
             <span className="card__link-icon">→</span>
-          </span>
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
-
-CharacterCard.propTypes = {
-  character: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    race: PropTypes.string.isRequired,
-    gender: PropTypes.string.isRequired,
-    affiliation: PropTypes.string,
-  }).isRequired,
-};
 
 export default CharacterCard; 

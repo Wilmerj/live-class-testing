@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import DragonBallLogo from './DragonBallLogo';
 
-function Layout({ children }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+interface LayoutProps {
+  children: ReactNode;
+}
 
-  const toggleMenu = () => {
+function Layout({ children }: LayoutProps): JSX.Element {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -80,9 +83,5 @@ function Layout({ children }) {
     </div>
   );
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Layout; 

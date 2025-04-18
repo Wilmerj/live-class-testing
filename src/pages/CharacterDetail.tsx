@@ -1,12 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { getCharacterById } from '../services/api';
+import { Character } from '../types';
 
-function CharacterDetail() {
-  const { id } = useParams();
-  const { data: character, isLoading, isError } = useQuery(
+function CharacterDetail(): JSX.Element {
+  const { id } = useParams<{ id: string }>();
+  const { data: character, isLoading, isError } = useQuery<Character, Error>(
     ['character', id],
-    () => getCharacterById(id)
+    () => getCharacterById(id || ''),
+    {
+      enabled: !!id
+    }
   );
 
   if (isLoading) {
