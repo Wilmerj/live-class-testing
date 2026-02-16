@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--color-primary-dark);
+  background-color: red;
   color: white;
   box-shadow: var(--shadow-2);
   position: sticky;
