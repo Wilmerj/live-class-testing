@@ -5,7 +5,7 @@ interface CharacterCardProps {
   character: Character;
 }
 
-function CharacterCard({ character }: CharacterCardProps): JSX.Element {
+function CharacterCard({ character }: CharacterCardProps) {
   const getTagClass = (role?: string): string => {
     if (role === "Hero" || role === "Z Fighter") return "card__tag--hero";
     if (role === "Villain") return "card__tag--villain";

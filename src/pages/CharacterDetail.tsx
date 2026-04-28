@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import { getCharacterById } from '../services/api';
 import { Character } from '../types';
 
-function CharacterDetail(): JSX.Element {
+function CharacterDetail() {
   const { id } = useParams<{ id: string }>();
   const { data: character, isLoading, isError } = useQuery<Character, Error>(
     ['character', id],

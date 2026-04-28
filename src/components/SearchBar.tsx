@@ -7,7 +7,7 @@ interface SearchBarProps {
   placeholder?: string;
 }
 
-function SearchBar({ value, onChange, placeholder = "Buscar personaje..." }: SearchBarProps): JSX.Element {
+function SearchBar({ value, onChange, placeholder = "Buscar personaje..." }: SearchBarProps) {
   return (
     <div className="search-bar" data-testid="search-bar">
       <div className="search-bar__icon-container">
